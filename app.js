@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/build'));
 
 app.use(cors())
 // process.env.MONGODB_URI || 
-var uristring = 'mongodb+srv://journal:gmFPY3EXXl1e5GTk@cluster0.sxs2nr0.mongodb.net/?retryWrites=true&w=majority'
+var uristring = process.env.MONGODB_URI
 
 mongoose.connect(uristring, { useUnifiedTopology: true });
 var db = mongoose.connection;
